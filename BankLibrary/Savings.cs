@@ -45,7 +45,7 @@ namespace BankLibrary
                 }
                 else
                 {
-                    Console.WriteLine(  "Not enough balance");
+                    Console.WriteLine(  "Balance not enough");
                 }
             }
             else  // if no salary account
