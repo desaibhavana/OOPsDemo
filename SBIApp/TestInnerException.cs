@@ -11,7 +11,7 @@ namespace SBIApp
     {
         static void Main(string[] args)
         {
-            // throw new ArgumentException();
+            //throw new ArgumentException();
 
             try
             {
@@ -29,12 +29,12 @@ namespace SBIApp
                     }
                 }
             }
-
             catch (Exception e)
             {
                 //The e.StackTrace property gives us the location of the error and has the value 
 
-                Console.WriteLine(String.Concat(e.StackTrace, e.Message));
+                Console.WriteLine(e.StackTrace);
+                Console.WriteLine(e.Message);
 
 
                 //check if the InnerException is null or not. If it is not null, we can display InnerException.StackTrace and InnerException.Message
@@ -42,9 +42,13 @@ namespace SBIApp
                 if (e.InnerException != null)
                 {
                     Console.WriteLine("\nInner Exception\n");
-                    Console.WriteLine(String.Concat(e.InnerException.StackTrace, e.InnerException.Message));
+                    Console.WriteLine(  e.InnerException. GetType().Name);
+                    Console.WriteLine(e.InnerException.StackTrace);
+                    Console.WriteLine(e.InnerException.Message);
                 }
             }
+
+
             Console.ReadLine();
         }
     }

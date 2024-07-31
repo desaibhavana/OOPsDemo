@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>SBIApp.TestInnerException</StartupObject>
+    <StartupObject>SBIApp.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

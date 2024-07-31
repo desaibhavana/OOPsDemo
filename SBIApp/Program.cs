@@ -64,37 +64,73 @@ namespace SBIApp
 
             // Console.WriteLine(  "\n----------------");
 
-            Bank b1 = new Bank();
-            Console.WriteLine(b1.ToString());  //Bank
+            //Bank b1 = new Bank();
+            //Console.WriteLine(b1.ToString());  //Bank
 
 
-            Object obj = new Object();
-            Console.WriteLine(obj.ToString());  //Object
+            //Object obj = new Object();
+            //Console.WriteLine(obj.ToString());  //Object
 
-            obj = new Bank();
-            Console.WriteLine(obj.ToString());   //bank
+            //obj = new Bank();
+            //Console.WriteLine(obj.ToString());   //bank
 
 
             //&&        ||      !
             // Console.ReadLine();
             #endregion
 
-            //Object of Savings class
-            Savings savings = new Savings();
-            Console.WriteLine(savings);
+            ////Object of Savings class
+            //Savings savings = new Savings();
+            //Console.WriteLine(savings);
 
-            Console.WriteLine(  "\n-----------------");
+            //Console.WriteLine(  "\n-----------------");
 
-            Savings savings1 = new Savings("user1", 100000, true);
-            Console.WriteLine(savings1);
+            //Savings savings1 = new Savings("user1", 100000, true);
+            //Console.WriteLine(savings1);
+            //try
+            //{
+            //    savings1.Withdraw(200000);
+            //}
+            //catch (BalanceException ex)
+            //{
+            //    Console.WriteLine(  ex.Message);
+            //}
+            
+            //Console.WriteLine(savings1);
 
-            savings1.Withdraw(200000);
-            Console.WriteLine(savings1);
+            //Console.WriteLine("\n------------------");
 
-            Console.WriteLine(  "new line to test git push");
+            //Savings savings2=null;
+            //try
+            //{
+            //   savings2 = new Savings("user2", 100, true);
 
+            //    if (savings2 != null)
+            //    {
+            //        Console.WriteLine(savings2.ToString()); 
+            //    }
+
+            //}
+            //catch (BalanceException ex)
+            //{
+            //    Console.WriteLine(  ex.Message);
+            //}
+            
+
+            //Bank bank = new Bank();
+            
+
+            Console.WriteLine(  Bank.Counter);
 
             Console.ReadLine();
         }
+
+
+        //static void ShowBankDetail(Savings savings) { }
+
+        //static void ShowBankDetail(Current current) { }
+
+        static void ShowBankDetail(Bank bank) { }
+
     }
 }

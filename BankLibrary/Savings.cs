@@ -41,22 +41,23 @@ namespace BankLibrary
             {
                 if ((Balance - amount) >= 0)
                 {
-                    base.Withdraw(amount);
+                    // base.Withdraw(amount);
+                    Balance -= amount;
                 }
                 else
                 {
-                    Console.WriteLine(  "Balance not enough");
+                    throw new BalanceException("Balance not enough");
                 }
             }
             else  // if no salary account
             {
                 if ((Balance - amount) >= 1000)
                 {
-                    base.Withdraw(amount    );
+                    Balance -= amount;
                 }
                 else
                 {
-                    Console.WriteLine("Not enough balance");
+                    throw new BalanceException("Balance not enough");
                 }
             }
         }

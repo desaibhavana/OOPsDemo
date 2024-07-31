@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BankLibrary
 {
-    public class Bank
+    public abstract  class Bank
     {
         private static int counter;
 
@@ -33,7 +33,12 @@ namespace BankLibrary
         public double Balance
         {
             get { return balance; }
-           private  set { balance = value; }
+           protected  set { 
+                if (value < 1000)
+                {
+                    throw new BalanceException("To open an account minimum amount is Rs. 1000");
+                }
+                balance = value; }
         }
 
         private int accNo;
@@ -53,10 +58,12 @@ namespace BankLibrary
             Balance += amount;
         }
 
-        public virtual void Withdraw(double amount)
-        {
-            Balance -= amount;
-        }
+        //public virtual void Withdraw(double amount)
+        //{
+        //    Balance -= amount;
+        //}
+
+        public abstract void Withdraw(double amount);
 
         public override string ToString()
         {
@@ -79,6 +86,11 @@ namespace BankLibrary
         {          
             AccHolderName = name;
             Balance = amount;
+        }
+
+        public Bank(double amount)
+        {
+            Balance= amount;
         }
 
 
