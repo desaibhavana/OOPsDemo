@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankLibrary
 {
-    public  class Savings : Bank
+    public    class Savings : Bank, IInterest
     {
 		private bool isSalaryAcc;
 
@@ -62,6 +62,12 @@ namespace BankLibrary
             }
         }
 
+        public double CalculateInterest()
+        {
+            double interestAmt = Balance * .1;
+            Balance += interestAmt;
+            return interestAmt;
+        }
     }
 
     

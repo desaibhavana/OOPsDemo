@@ -95,7 +95,7 @@ namespace SBIApp
             //{
             //    Console.WriteLine(  ex.Message);
             //}
-            
+
             //Console.WriteLine(savings1);
 
             //Console.WriteLine("\n------------------");
@@ -115,10 +115,14 @@ namespace SBIApp
             //{
             //    Console.WriteLine(  ex.Message);
             //}
-            
+
 
             //Bank bank = new Bank();
-            
+
+            Savings savings = new Savings("bhavana", 100000, true);
+            Console.WriteLine(savings);
+            Console.WriteLine(savings.CalculateInterest());
+            Console.WriteLine(savings);
 
             Console.WriteLine(  Bank.Counter);
 
@@ -130,7 +134,7 @@ namespace SBIApp
 
         //static void ShowBankDetail(Current current) { }
 
-        static void ShowBankDetail(Bank bank) { }
+       // static void ShowBankDetail(Bank bank) { }
 
     }
 }
