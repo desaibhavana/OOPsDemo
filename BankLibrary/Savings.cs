@@ -33,6 +33,7 @@ namespace BankLibrary
 
         public override void Withdraw(double amount)
         {
+            this.amount = amount;
             //if salary acc then 0 balance
 
             //if non salary acc then 1000 balance
@@ -41,6 +42,7 @@ namespace BankLibrary
             {
                 if ((Balance - amount) >= 0)
                 {
+                    transactionType = "Withdraw";
                     // base.Withdraw(amount);
                     Balance -= amount;
                 }
@@ -53,6 +55,8 @@ namespace BankLibrary
             {
                 if ((Balance - amount) >= 1000)
                 {
+                    transactionType = "Withdraw";
+                    
                     Balance -= amount;
                 }
                 else

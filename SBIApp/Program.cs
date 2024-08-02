@@ -77,7 +77,7 @@ namespace SBIApp
 
             //&&        ||      !
             // Console.ReadLine();
-            #endregion
+
 
             ////Object of Savings class
             //Savings savings = new Savings();
@@ -119,14 +119,29 @@ namespace SBIApp
 
             //Bank bank = new Bank();
 
-            Savings savings = new Savings("bhavana", 100000, true);
-            Console.WriteLine(savings);
-            Console.WriteLine(savings.CalculateInterest());
-            Console.WriteLine(savings);
+            //Savings savings = new Savings("bhavana", 100000, true);
+            //Console.WriteLine(savings);
+            //Console.WriteLine(savings.CalculateInterest());
+            //Console.WriteLine(savings);
 
-            Console.WriteLine(  Bank.Counter);
+            //Console.WriteLine(  Bank.Counter);
+            #endregion
+
+            Savings savings = new Savings("user1", 100000, true);
+
+            savings.SMS += Savings_SMS;
+
+            savings.Deposit(10000);
+
+            savings.Withdraw(50000);
 
             Console.ReadLine();
+        }
+
+        private static void Savings_SMS(int accNo, string tranType, double amount, double balance)
+        {
+            Console.WriteLine(  $"AccNo = {accNo} \nType : {tranType} \nAmount = {amount} \nBalance = {balance}");
+            Console.WriteLine("------------------------");
         }
 
 
@@ -134,7 +149,7 @@ namespace SBIApp
 
         //static void ShowBankDetail(Current current) { }
 
-       // static void ShowBankDetail(Bank bank) { }
+        // static void ShowBankDetail(Bank bank) { }
 
     }
 }

@@ -7,8 +7,16 @@ using System.Threading.Tasks;
 
 namespace BankLibrary
 {
+    //declare delegate
+
+    public delegate void Notify(int accNo, string tranType, double amount, double balance);
+
+
     public abstract  class Bank
     {
+        //declare event
+        public event Notify SMS;
+
         private static int counter;
 
         public static int Counter
@@ -38,7 +46,15 @@ namespace BankLibrary
                 {
                     throw new BalanceException("To open an account minimum amount is Rs. 1000");
                 }
-                balance = value; }
+                balance = value;
+            
+                if (SMS != null)
+                {
+                    //SMS.Invoke();
+                    SMS(AccountNo, transactionType, amount,Balance);
+                }
+            
+            }
         }
 
         private int accNo;
@@ -49,12 +65,18 @@ namespace BankLibrary
             set { accNo = value; }
         }
 
+        protected string transactionType;
+
+        protected double amount;
+
         #endregion
 
         #region Methods
 
         public void Deposit(double amount)
         {
+            transactionType = "Deposit";
+            this.amount = amount;
             Balance += amount;
         }
 
